@@ -9,7 +9,7 @@ import reactor.core.publisher.Mono;
 
 @Service
 @AllArgsConstructor
-public class ProviderGetProviderName {
+public class ProviderFindByName {
 
     private final ProviderRepository providerRepository;
     private final ProviderMapper providerMapper;
