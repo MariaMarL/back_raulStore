@@ -3,6 +3,8 @@ package com.sofka.back_raulStore.routes;
 import com.sofka.back_raulStore.useCase.ProviderFindByIdUseCase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
@@ -10,11 +12,15 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 @Configuration
-public class ProviderGetByName {
+public class ProviderGetByIdRoute {
 
     @Bean
     public RouterFunction<ServerResponse> GetOneProvider(ProviderFindByIdUseCase getOne){
       return route(GET("/api/provider/{id}"),
-              request -> getOne.getProviderById(id))
+              request -> getOne.getProviderById(request.pathVariable("id"))
+                      .flatMap(providerDto -> ServerResponse.status(HttpStatus.OK)
+                              .contentType(MediaType.APPLICATION_JSON)
+                              .bodyValue(providerDto))
+                      .onErrorResume(throwable -> ServerResponse.status(HttpStatus.NOT_FOUND).build()));
     }
 }
