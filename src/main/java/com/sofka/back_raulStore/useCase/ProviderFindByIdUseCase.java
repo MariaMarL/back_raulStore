@@ -5,17 +5,20 @@ import com.sofka.back_raulStore.mapper.ProviderMapper;
 import com.sofka.back_raulStore.repository.ProviderRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @Service
 @AllArgsConstructor
-public class ProvidersGetAll {
+public class ProviderFindByIdUseCase {
 
     private final ProviderRepository providerRepository;
     private final ProviderMapper providerMapper;
 
-    public Flux<ProviderDto> getProviders(){
-        return providerRepository.findAll().map(providerMapper::toProviderDto);
-        //return providerRepository.findAll().map(provider -> providerMapper.toProviderDto(provider));
+    public Mono<ProviderDto> getProviderById(String id){
+
+        return providerRepository.findById(id)
+                .switchIfEmpty(Mono.error(()-> new IllegalStateException("Provider not found. ID: "+id)))
+                .map(providerMapper::toProviderDto);
+
     }
 }

@@ -7,7 +7,7 @@ import reactor.core.publisher.Mono;
 
 @Service
 @AllArgsConstructor
-public class ProviderDelete {
+public class ProviderDeleteUseCase {
 
     private final ProviderRepository providerRepository;
 

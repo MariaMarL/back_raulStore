@@ -14,7 +14,7 @@ import javax.validation.Valid;
 @Service
 @AllArgsConstructor
 @Validated
-public class ProviderCreate {
+public class ProviderCreateUseCase {
 
 
     private final ProviderRepository providerRepository;

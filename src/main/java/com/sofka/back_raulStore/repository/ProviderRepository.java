@@ -9,5 +9,4 @@ import reactor.core.publisher.Mono;
 @Repository
 public interface ProviderRepository extends ReactiveMongoRepository<Provider, String> {
     //String = type of the id.
-    Mono<Provider> findByname(String name);
 }
