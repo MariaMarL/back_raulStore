@@ -2,6 +2,7 @@ package com.sofka.back_raulStore.collections;
 
 
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
@@ -11,7 +12,7 @@ import javax.validation.constraints.NotBlank;
 @Document(collection = "provider")
 public class Provider {
 
-    @MongoId
+    @Id
     private String id;
     @NotBlank(message = "Please type your name")
     private String name;

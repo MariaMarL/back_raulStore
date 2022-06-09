@@ -1,9 +1,11 @@
 package com.sofka.back_raulStore.dto;
 
+import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import javax.validation.constraints.NotBlank;
 
+@Data
 public class ProviderDto {
 
 

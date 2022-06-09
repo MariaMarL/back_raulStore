@@ -22,6 +22,7 @@ public class ProviderGetAllRoute {
        return  route(GET("/api/providers"),
                request -> ServerResponse.status(HttpStatus.OK)
                        .contentType(MediaType.APPLICATION_JSON)
+                       //.body(BodyInserters.fromProducer(providersGetAll.getProviders(), ProviderDto.class)));
                        .body(BodyInserters.fromProducer(providersGetAll.getProviders(), ProviderDto.class)));
     }
 }
