@@ -13,18 +13,19 @@ public class Product {
 
     @Id
     private String id;
-    @NotBlank
+    @NotBlank(message = "This space can't be empty")
     private String name;
-    @NotBlank
+    @NotBlank(message = "This space can't be empty")
     private String description;
-
-    private Integer unitsLeft;
+    @NotBlank(message = "This space can't be empty")
+    private Integer unitsLeft=0;
+    @NotBlank(message = "This space can't be empty")
     private Integer maxUnits;
+    @NotBlank(message = "This space can't be empty")
     private Integer minUnits;
-
-    @NotBlank
+    @NotBlank(message = "This space can't be empty")
     private Double price;
-
-    private Provider provider;
+    @NotBlank(message = "This space can't be empty")
+    private String providerName;
 
 }

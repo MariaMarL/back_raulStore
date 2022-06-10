@@ -1,4 +1,4 @@
-package com.sofka.back_raulStore.provider.config;
+package com.sofka.back_raulStore.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

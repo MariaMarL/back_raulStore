@@ -5,9 +5,9 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import javax.validation.constraints.NotBlank;
 
+
 @Data
 public class ProviderDto {
-
 
     private String id;
     @NotBlank(message = "Please type your name")
