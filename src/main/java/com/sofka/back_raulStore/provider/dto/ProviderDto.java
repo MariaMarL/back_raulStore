@@ -1,18 +1,14 @@
-package com.sofka.back_raulStore.collections;
-
+package com.sofka.back_raulStore.provider.dto;
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import javax.validation.constraints.NotBlank;
 
 @Data
-@Document(collection = "provider")
-public class Provider {
+public class ProviderDto {
 
-    @Id
+
     private String id;
     @NotBlank(message = "Please type your name")
     private String name;

@@ -1,7 +1,7 @@
-package com.sofka.back_raulStore.routes;
+package com.sofka.back_raulStore.provider.routes;
 
-import com.sofka.back_raulStore.dto.ProviderDto;
-import com.sofka.back_raulStore.useCase.ProviderCreateUseCase;
+import com.sofka.back_raulStore.provider.dto.ProviderDto;
+import com.sofka.back_raulStore.provider.useCase.ProviderCreateUseCase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;

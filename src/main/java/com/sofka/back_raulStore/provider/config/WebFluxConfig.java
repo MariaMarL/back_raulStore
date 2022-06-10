@@ -1,4 +1,4 @@
-package com.sofka.back_raulStore.config;
+package com.sofka.back_raulStore.provider.config;
 
         import org.springframework.context.annotation.Bean;
         import org.springframework.context.annotation.Configuration;

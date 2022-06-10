@@ -1,8 +1,8 @@
-package com.sofka.back_raulStore.useCase;
+package com.sofka.back_raulStore.provider.useCase;
 
-import com.sofka.back_raulStore.dto.ProviderDto;
-import com.sofka.back_raulStore.mapper.ProviderMapper;
-import com.sofka.back_raulStore.repository.ProviderRepository;
+import com.sofka.back_raulStore.provider.dto.ProviderDto;
+import com.sofka.back_raulStore.provider.mapper.ProviderMapper;
+import com.sofka.back_raulStore.provider.repository.ProviderRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;

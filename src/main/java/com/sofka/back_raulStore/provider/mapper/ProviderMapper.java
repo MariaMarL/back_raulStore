@@ -1,7 +1,7 @@
-package com.sofka.back_raulStore.mapper;
+package com.sofka.back_raulStore.provider.mapper;
 
-import com.sofka.back_raulStore.collections.Provider;
-import com.sofka.back_raulStore.dto.ProviderDto;
+import com.sofka.back_raulStore.provider.collections.Provider;
+import com.sofka.back_raulStore.provider.dto.ProviderDto;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.config.EnableWebFlux;
