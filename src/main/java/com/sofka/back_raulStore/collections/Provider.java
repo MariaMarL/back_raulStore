@@ -14,11 +14,8 @@ public class Provider {
 
     @Id
     private String id;
-    @NotBlank(message = "Please type your name")
     private String name;
-    @NotBlank (message = "Please type you dni number")
     private String dni;
-    @NotBlank (message = "Please type you phone number")
     private String phone;
 
 }

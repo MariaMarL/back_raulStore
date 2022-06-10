@@ -1,4 +1,4 @@
-package com.sofka.back_raulStore.useCase;
+package com.sofka.back_raulStore.useCase.provider;
 
 import com.sofka.back_raulStore.repository.ProviderRepository;
 import lombok.AllArgsConstructor;

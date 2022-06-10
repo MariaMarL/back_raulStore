@@ -1,6 +1,6 @@
-package com.sofka.back_raulStore.routes;
+package com.sofka.back_raulStore.routes.provider;
 
-import com.sofka.back_raulStore.useCase.ProviderDeleteUseCase;
+import com.sofka.back_raulStore.useCase.provider.ProviderDeleteUseCase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
