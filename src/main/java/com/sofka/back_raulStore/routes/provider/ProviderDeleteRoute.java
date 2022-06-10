@@ -17,7 +17,7 @@ public class ProviderDeleteRoute {
 
     @Bean
     public RouterFunction<ServerResponse> deleteProvider (ProviderDeleteUseCase deleteProvider){
-        return route(DELETE("/api/provider/delete/{id}").and(accept(MediaType.APPLICATION_JSON)),
+        return route(DELETE("/api/provider/delete/{id}"),
                 request -> deleteProvider.delete(request.pathVariable("id"))
                         .flatMap((unused) -> ServerResponse.status(HttpStatus.ACCEPTED).build())
                         .onErrorResume(throwable -> ServerResponse.status(HttpStatus.NOT_FOUND).build()));

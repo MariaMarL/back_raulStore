@@ -21,6 +21,10 @@ public class ProviderGetByIdRoute {
                       .flatMap(providerDto -> ServerResponse.status(HttpStatus.OK)
                               .contentType(MediaType.APPLICATION_JSON)
                               .bodyValue(providerDto))
-                      .onErrorResume(throwable -> ServerResponse.status(HttpStatus.NOT_FOUND).build()));
+                      .onErrorResume(throwable -> {
+                                System.out.println(throwable.getMessage());
+                              return ServerResponse.status(HttpStatus.NOT_FOUND).build();
+                      }
+                      ));
     }
 }
