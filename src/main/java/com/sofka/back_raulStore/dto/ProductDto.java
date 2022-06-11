@@ -11,10 +11,10 @@ public class ProductDto {
 
     private String id;
 
-    @NotBlank(message = "This space can't be empty")
+    @NotBlank(message = "Name can't be blank")
     private String name;
 
-    @NotBlank(message = "This space can't be empty")
+    @NotBlank(message = "description can't be blank")
     private String description;
 
     private Integer unitsLeft;
@@ -22,12 +22,12 @@ public class ProductDto {
     @NotNull(message = "Max units can't be null")
     private Integer maxUnits;
 
-    @NotNull(message = "Max units can't be null")
+    @NotNull(message = "Min units can't be null")
     private Integer minUnits;
 
-    @NotNull(message = "Max units can't be null")
+    @NotNull(message = "Price can't be null")
     private Double price;
 
-    @NotBlank(message = "This space can't be empty")
+    @NotBlank(message = "Message can't be blank")
     private String providerName;
 }
