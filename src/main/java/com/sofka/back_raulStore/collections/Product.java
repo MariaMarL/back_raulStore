@@ -18,4 +18,5 @@ public class Product {
     private Integer minUnits;
     private Double price;
     private String providerName;
+
 }
