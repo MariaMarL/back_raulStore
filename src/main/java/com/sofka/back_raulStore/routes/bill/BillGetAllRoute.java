@@ -1,7 +1,8 @@
-package com.sofka.back_raulStore.routes.providerInvoice;
+package com.sofka.back_raulStore.routes.bill;
 
-import com.sofka.back_raulStore.dto.ProviderInvoiceDto;
-import com.sofka.back_raulStore.useCase.providerInvoice.GetAllProviderInvoiceUseCase;
+import com.sofka.back_raulStore.dto.BillDto;
+import com.sofka.back_raulStore.useCase.bill.BillCreateUseCase;
+import com.sofka.back_raulStore.useCase.bill.BillGetAllUseCase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
@@ -14,13 +15,13 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 @Configuration
-public class GetAllProviderInvoiceRoute {
+public class BillGetAllRoute {
 
     @Bean
-    public RouterFunction<ServerResponse> allProviderInvoice(GetAllProviderInvoiceUseCase getAllProviderInvoiceUseCase){
-        return route(GET("/api/providerInvoices"),
+    public RouterFunction<ServerResponse> getAllBills(BillGetAllUseCase getBills){
+        return route(GET("/api/bills"),
                 request -> ServerResponse.status(HttpStatus.OK)
                         .contentType(MediaType.APPLICATION_JSON)
-                        .body(BodyInserters.fromProducer(getAllProviderInvoiceUseCase.getAllProviderInvoice(), ProviderInvoiceDto.class)));
+                        .body(BodyInserters.fromProducer(getBills.getBills(), BillDto.class)));
     }
 }

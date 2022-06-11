@@ -12,9 +12,9 @@ public class BillDto {
     private String id;
     private LocalDate date;
     @NotBlank(message = "Please enter the client Name")
-    private String ClientName;
+    private String clientName;
     @NotBlank(message = "Please enter the Seller Name")
-    private String SellerName;
+    private String sellerName;
     private List<String> productId;
     private Double total;
 }
