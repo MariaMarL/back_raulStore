@@ -14,10 +14,7 @@ public class ProviderInvoice {
 
     @Id
     private String id;
-    @NotBlank
     private Product product;
-    @NotBlank
     private LocalDate date;
-    @NotBlank
     private Provider provider;
 }
