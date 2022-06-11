@@ -16,6 +16,5 @@ public class ProviderInvoiceDto {
     private Product product;
     @NotBlank(message = "Date can't be empty")
     private LocalDate date;
-    @NotBlank(message = "Provider can't be empty")
     private Provider provider;
 }
