@@ -4,17 +4,18 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
-@Document(collection = "providerInvoice")
-public class ProviderInvoice {
+@Document(collection = "bill" )
+public class Bill {
 
     @Id
     private String id;
-    private String productId;
     private LocalDate date;
-    private String providerId;
+    private String ClientName;
+    private String SellerName;
+    private List<String> productId;
+    private Double total;
 }

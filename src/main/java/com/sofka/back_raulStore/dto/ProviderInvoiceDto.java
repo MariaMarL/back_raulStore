@@ -13,9 +13,9 @@ import java.time.LocalDateTime;
 public class ProviderInvoiceDto {
 
     private String id;
-    @NotNull
-    private Product product;
+    @NotBlank
+    private String productId;
     private LocalDate date;
-    @NotNull
-    private Provider provider;
+    @NotBlank
+    private String providerId;
 }
