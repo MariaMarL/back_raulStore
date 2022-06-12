@@ -20,7 +20,7 @@ public class BillCreateUseCase {
     private final BillMapper mapper;
 
     public Mono<BillDto> createBill (@Valid BillDto billDto){
-        billDto.setDate(LocalDate.now());
+        billDto.setDate(LocalDate.now().toString());
         return repository.save(mapper.toBillEntity(billDto))
                 .map(mapper::toBillDto);
     }

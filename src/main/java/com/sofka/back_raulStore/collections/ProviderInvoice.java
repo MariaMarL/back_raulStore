@@ -15,6 +15,7 @@ public class ProviderInvoice {
     @Id
     private String id;
     private String productId;
-    private LocalDate date;
+    private String date;
     private String providerId;
+    private Integer amount;
 }

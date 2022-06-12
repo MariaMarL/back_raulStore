@@ -21,7 +21,7 @@ public class CreateProviderInvoiceUseCase {
     private final ProviderInvoiceMapper mapper;
 
     public Mono<ProviderInvoiceDto> createProviderInvoice(@Valid ProviderInvoiceDto providerInvoiceDto){
-            providerInvoiceDto.setDate(LocalDate.now());
+            providerInvoiceDto.setDate(LocalDate.now().toString());
             return repository.save(mapper.toProviderInvoice(providerInvoiceDto))
                     .map(mapper::toProviderInvoiceDto);
 

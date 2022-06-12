@@ -10,7 +10,7 @@ import java.util.List;
 public class BillDto {
 
     private String id;
-    private LocalDate date;
+    private String date;
     @NotBlank(message = "Please enter the client Name")
     private String clientName;
     @NotBlank(message = "Please enter the Seller Name")
