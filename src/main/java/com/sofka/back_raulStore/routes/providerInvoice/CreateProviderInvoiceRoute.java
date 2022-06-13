@@ -1,7 +1,13 @@
 package com.sofka.back_raulStore.routes.providerInvoice;
 
+import com.sofka.back_raulStore.dto.BillDto;
 import com.sofka.back_raulStore.dto.ProviderInvoiceDto;
 import com.sofka.back_raulStore.useCase.providerInvoice.CreateProviderInvoiceUseCase;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import org.springdoc.core.annotations.RouterOperation;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
@@ -17,6 +23,9 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 public class CreateProviderInvoiceRoute {
 
     @Bean
+    @RouterOperation(operation = @Operation(description = "Create providerInvoice", operationId = "providerInvoice", tags = "providerInvoices",
+            responses = @ApiResponse(responseCode = "200", content = @Content(schema = @Schema(implementation = ProviderInvoiceDto.class)))))
+
     public RouterFunction<ServerResponse> createProviderInvoice(CreateProviderInvoiceUseCase createProviderInvoiceUseCase){
         return route(POST("/api/providerInvoice/create").and(accept(MediaType.APPLICATION_JSON)),
                 request -> request.bodyToMono(ProviderInvoiceDto.class)
